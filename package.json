@@ -1,0 +1,26 @@
+{
+  "name": "nvidia-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrccodes/nvidia-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrccodes/nvidia-bot/issues"
+  },
+  "homepage": "https://github.com/mrccodes/nvidia-bot#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "firebase-admin": "^10.0.0",
+    "twilio": "^3.70.0"
+  }
+}

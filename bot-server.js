@@ -131,7 +131,7 @@ sendEmails.eighty.send = () => {
                 }
             })
         })
-    
+
     db.collection('3080').doc('lastsent').set({
         time: Date.now()
     })
@@ -152,8 +152,8 @@ const getStatus =  async () => {
         results.seventy = !seventy.data.includes('<strong>Sold Out</strong>');
         let eighty = await axios(models.three.url)
         results.eighty = !eighty.data.includes('<strong>Sold Out</strong>');
-        
 
+    console.log(results)
     return results
 }
 
@@ -175,8 +175,8 @@ let repeat = setInterval(() => {
             }
         })
     })
-    
-}, 5000)
+
+}, 150000)
 
 
 
