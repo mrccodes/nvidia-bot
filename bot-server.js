@@ -190,9 +190,9 @@ app.get('/', (req, res) => {
     res.send(JSON.stringify(currestStatus))
   })
 
-const port = 3000
+const port = 80
 
 
-app.listen(port, () => {
+app.listen(80, () => {
     console.log(`app listening on port ${port}`)
 })
