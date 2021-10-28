@@ -154,14 +154,30 @@ const getStatus =  async () => {
         seventy: false,
         eighty: false
     }
-
-
+    try {
         let sixty = await axios(models.one.url);
         results.sixty = !sixty.data.includes('<strong>Sold Out</strong>');
-        let seventy = await axios(models.two.url)
+
+    } catch(err) {
+        console.error(err)
+    }
+
+    try {
+          let seventy = await axios(models.two.url)
         results.seventy = !seventy.data.includes('<strong>Sold Out</strong>');
-        let eighty = await axios(models.three.url)
+    } catch(err) {
+        console.error(err)
+    }
+
+    try {
+       let eighty = await axios(models.three.url)
         results.eighty = !eighty.data.includes('<strong>Sold Out</strong>');
+    } catch(err) {
+        console.error(err)
+    }
+
+
+
 
     console.log(results)
     currentStatus = results
