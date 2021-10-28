@@ -190,7 +190,7 @@ app.get('/', (req, res) => {
     res.send(JSON.stringify(currestStatus))
   })
 
-const port = 443
+const port = 3000
 
 
 app.listen(port, () => {
