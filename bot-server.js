@@ -3,10 +3,12 @@ const admin = require('firebase-admin')
 require("dotenv").config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+const cors = require('cors')
 const client = require('twilio')(accountSid, authToken);
 const express = require('express')
 const app = express();
 
+app.use(cors())
 let currentStatus = {
     sixty: null,
     seventy: null,
