@@ -183,6 +183,9 @@ let repeat = setInterval(() => {
             }
         })
     })
+    .catch(err => {
+        console.error(err)
+    })
 
 }, 150000)
 
