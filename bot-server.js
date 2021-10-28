@@ -7,10 +7,10 @@ const client = require('twilio')(accountSid, authToken);
 const express = require('express')
 const app = express();
 
-let currestStatus = {
-    sixty: false,
-    seventy: false,
-    eighty: false
+let currentStatus = {
+    sixty: null,
+    seventy: null,
+    eighty: null
 }
 
 const cred = {
@@ -162,6 +162,7 @@ const getStatus =  async () => {
         results.eighty = !eighty.data.includes('<strong>Sold Out</strong>');
 
     console.log(results)
+    currentStatus = results
     return results
 }
 
@@ -190,7 +191,7 @@ let repeat = setInterval(() => {
 }, 150000)
 
 app.get('/', (req, res) => {
-    res.send(JSON.stringify(currestStatus))
+    res.send(JSON.stringify(currentStatus))
   })
 
 const port = process.env.PORT || 3000
