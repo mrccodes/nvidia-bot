@@ -4,6 +4,14 @@ require("dotenv").config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+const express = require('express')
+const app = express();
+
+let currestStatus = {
+    sixty: false,
+    seventy: false,
+    eighty: false
+}
 
 const cred = {
     type: process.env.FB_ACCOUNT_TYPE,
@@ -178,5 +186,13 @@ let repeat = setInterval(() => {
 
 }, 150000)
 
+app.get('/', (req, res) => {
+    res.send(JSON.stringify(currestStatus))
+  })
+
+const port = 443
 
 
+app.listen(port, () => {
+    console.log(`app listening on port ${port}`)
+})
