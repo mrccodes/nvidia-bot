@@ -208,9 +208,15 @@ let repeat = setInterval(() => {
 
 }, 150000)
 
+app.get('/status', (req, res) => {
+    res.send(currentStatus)
+})
+
 app.get('/', (req, res) => {
     res.send(JSON.stringify(currentStatus))
   })
+
+
 
 const port = process.env.PORT || 3000
 
